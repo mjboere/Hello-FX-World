@@ -14,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Spelbord;
+import observers.SpelbordObservable;
 import observers.SpelbordObserver;
 
 public class SpelbordView extends SpelbordObserver {
@@ -72,7 +73,7 @@ public class SpelbordView extends SpelbordObserver {
 		return gridPane;
 	}
 	
-  	private GridPane createUpdatedGridPane(Spelbord sb){	
+  	private GridPane createUpdatedGridPane(SpelbordObservable sb){	
   		ImageView image = loadWorldImage();
   		image.addEventFilter(MouseEvent.MOUSE_CLICKED, imageClicked); 
   		Text scoreText = new Text("Player Score");
@@ -116,7 +117,7 @@ public class SpelbordView extends SpelbordObserver {
     }; 
 
   	@Override
-	public void update(Spelbord sb) {
+	public void update(SpelbordObservable sb) {
   		loadPrimaryStageWithGridPane(createUpdatedGridPane(sb));
 	}
       
