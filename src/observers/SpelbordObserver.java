@@ -1,7 +1,5 @@
 package observers;
 
-import models.Spelbord;
-
-public abstract class SpelbordObserver {
-	public abstract void update(SpelbordObservable sb);
+public interface SpelbordObserver {
+	public void update(SpelbordObservable sb);
 }
